@@ -1,0 +1,25 @@
+<li id="status_<%= tweet.id %>">
+  <div class="listable">
+    <span class="thumb vcard author">
+      <a class="url" href="http://twitter.com/<%= tweet.user.screen_name %>">
+        <img class="photo pf" width="48" height="48" src="<%= tweet.user.profile_image_url %>" alt="<%= tweet.user.screen_name %>"/>
+      </a>
+    </span>
+  <span class="status-body">
+    <strong>
+      <a class="screen-name" title="<%= tweet.user.name %>" href="http://twitter.com/<%= tweet.user.screen_name %>"><%= tweet.user.screen_name %></a>
+    </strong>
+    <span class="entry-content">
+      <%= replace_links(tweet.text) %>
+    </span>
+    <span class="meta entry-meta">
+      <a class="entry-date" rel="bookmark" href="http://twitter.com/<%= tweet.user.screen_name %>/status/<%= tweet.id %>">
+        <span class="published"><%= timeago(tweet.created_at) %>
+          <% if !tweet.in_reply_to_screen_name.nil? %>
+            in reply to <%= tweet.in_reply_to_screen_name.nil? %>
+          <% end %>
+        </span>
+      </a>
+    </span>
+  </span>
+</li>

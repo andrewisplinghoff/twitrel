@@ -1,0 +1,33 @@
+twitrel is a simple twitter client based on Ruby on Rails.
+It sorts the timeline of your friends' tweets not only based on
+when the tweets have been crated, but also takes into account how
+many tweets your friends are sending. Friends who don't write much
+are ranked higher so you can keep up with them without having to
+watch your timeline all the time.
+
+============
+   Setup
+============
+You will need to have Ruby on Rails installed on your client.
+Insert your user name and password into config/environment.rb so
+that twitrel is able to fetch your friends' timeline (this function
+in the Twitter API needs authentication because some of your friends
+might have protected their updates).
+
+Run the application in a webrick server with
+
+# script/server
+
+. If you want to have twitrel running on your system while also
+running other webrick servers, you can specify a specific port that
+webrick should run on with 'script/server -p [port]'.
+Put '/path/to/twitrel/script/server -p [port] &' into some autostart
+script if you want to have it always running.
+
+You can use the application from your browser using http://localhost:port.
+If you don't specify a specific port, it defaults to 3000.
+
+I use twitrel like a normal application with a link from the desktop
+using Mozilla Prism. If you want to do this, you will need to install Prism
+as a browser plugin from Firefox. Then, visit the twitrel website in your 
+browser and click Tools -> "Convert Website to Application".

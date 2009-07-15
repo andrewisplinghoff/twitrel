@@ -1,0 +1,13 @@
+<div id="my_container" class="subpage">
+  <table class="columns">
+  <tr>
+    <td id="content" class="round-left column">
+      <ol id="timeline" class="statuses">
+        <%= render(:partial => "tweet",
+                   :collection => @tweets,
+                   :spacer_template => "spacer") %>
+      </ol>
+    </td>
+  </tr>
+  </table>
+</div>
