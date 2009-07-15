@@ -16,6 +16,5 @@ class TimelineController < ApplicationController
     timeline.map! { |entry| [(numtweets[entry.user.id] ** 0.6) * (Time.now - entry.created_at), entry] }
     timeline = timeline.sort_by { |entry| entry[0] }
     @tweets = timeline.map { |entry| entry[1] } 
-    #puts @tweets.map { |entry| "#{entry.user.name}: #{entry.text} um #{entry.created_at.strftime('%d. %B %Y, %H:%M Uhr')}" }
   end
 end
