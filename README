@@ -8,17 +8,15 @@ watch your timeline all the time.
 ============
    Setup
 ============
-You will need to have Ruby on Rails installed on your client.
+You will need to have Ruby on Rails installed on your system.
 Insert your user name and password into config/environment.rb so
 that twitrel is able to fetch your friends' timeline (this function
 in the Twitter API needs authentication because some of your friends
 might have protected their updates).
 
-Run the application in a webrick server with
+Run the application in a webrick server with "# script/server".
 
-# script/server
-
-. If you want to have twitrel running on your system while also
+If you want to have twitrel running on your system while also
 running other webrick servers, you can specify a specific port that
 webrick should run on with 'script/server -p [port]'.
 Put '/path/to/twitrel/script/server -p [port] &' into some autostart
