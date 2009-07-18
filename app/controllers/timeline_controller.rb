@@ -13,8 +13,6 @@ class TimelineController < ApplicationController
       num = timeline.select{ |entry| entry.user.id == friend.id }.size
       numtweets.store(friend.id, num)
     end
-    timeline.map! { |entry| [(numtweets[entry.user.id] ** 0.6) * (Time.now - entry.created_at), entry] }
-    timeline = timeline.sort_by { |entry| entry[0] }
-    @tweets = timeline.map { |entry| entry[1] } 
+    @tweets = timeline.sort_by { |entry| (numtweets[entry.user.id] ** 0.6) * (Time.now - entry.created_at) }
   end
 end
