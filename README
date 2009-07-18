@@ -14,6 +14,10 @@ that twitrel is able to fetch your friends' timeline (this function
 in the Twitter API needs authentication because some of your friends
 might have protected their updates).
 
+Before running TwitRel, the twitter4r has to be installed:
+
+# sudo gem install twitter4r
+
 Run the application in a webrick server with "# script/server".
 
 If you want to have twitrel running on your system while also
