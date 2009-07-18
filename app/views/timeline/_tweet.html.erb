@@ -16,7 +16,7 @@
       <a class="entry-date" rel="bookmark" href="http://twitter.com/<%= tweet.user.screen_name %>/status/<%= tweet.id %>">
         <span class="published"><%= timeago(tweet.created_at) %>
           <% if !tweet.in_reply_to_screen_name.nil? %>
-            in reply to <%= tweet.in_reply_to_screen_name.nil? %>
+            in reply to <%= tweet.in_reply_to_screen_name %>
           <% end %>
         </span>
       </a>
