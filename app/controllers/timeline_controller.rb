@@ -10,7 +10,7 @@ class TimelineController < ApplicationController
     timeline = timeline.select { |entry| entry.user.id != my_id }
     numtweets = {}
     twitter.my(:friends).each do |friend|
-      num = timeline.select{ |entry| entry.user.id == friend.id }.size
+      num = timeline.select { |entry| entry.user.id == friend.id }.size
       numtweets.store(friend.id, num)
     end
     @tweets = timeline.sort_by { |entry| (numtweets[entry.user.id] ** 0.6) * (Time.now - entry.created_at) }
